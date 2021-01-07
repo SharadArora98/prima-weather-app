@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Prima Weather APP</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<style>
+		body {
+  			background-color: #f8deff;
+		}
+		</style>
+	</head>
+	<body>
+
+<center>
+<h1>Prima Weather APP</h1><hr><br>
+<h1><%= data["name"] %></h1>
+<br>
+<h1>
+<%= data["weather"][0]["main"] %>
+<%= data["main"]["temp"] -273.15  %> °C
+<img src="http://openweathermap.org/img/wn/<%=data["weather"][0]["icon"]%>@2x.png">
+</h1>
+<br>
+<div> Pressure  <%= data["main"]["pressure"]%> hPa</div>
+<div> Humidity  <%= data["main"]["humidity"]%> % </div>
+<div> Max Temp  <%= data["main"]["temp_min"]-273.15%> °C
+ Min Temp  <%= data["main"]["temp_max"]-273.15%> °C </div>
+<br><br>
+
+<form action="/">
+	<input type="submit" value="Go Back">
+</form>
+
+</body>
+</html>
